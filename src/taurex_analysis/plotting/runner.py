@@ -8,7 +8,9 @@ from .brightness import plot_brightness
 from .atmosphere import plot_contribution_functions_and_tp
 
 
-def plot(source, output=None):
+def plot(source, output=None, config=None):
+    from .config import validate, resolve_colors
+    config = validate({} if config is None else config)
     source=Path(source)
     output=Path(output) if output else source/'figures'
     output.mkdir(parents=True,exist_ok=True)
@@ -17,11 +19,13 @@ def plot(source, output=None):
         data={k:saved[k] for k in saved.files}
     note='SOFTWARE SMOKE TEST — not scientific results' if meta['smoke'] else ''
     bands=data['bands'].tolist()
+    colors=resolve_colors(bands,meta['rows'],config)
     responses={b:(data[f'response_wave_{i}'],data[f'response_value_{i}']) for i,b in enumerate(bands)}
     plot_eclipse_sed(data['wavelength_um'],data['sed_quantiles'],meta['rows'],bands,
-        data['band_quantiles'],output/'eclipse_sed.png',model_responses=responses,note=note)
+        data['band_quantiles'],output/'eclipse_sed.png',model_responses=responses,note=note,bandpass_colors=colors)
     plot_surface_seds(data['wavelength_um'],data['flux_quantiles'],data['star_surface_flux'],output/'planet_star_sed.png',note=note)
-    plot_brightness(data,meta['rows'],output/'brightness_temperature.png',note=note)
+    plot_brightness(data['wavelength_um'], data['tb_quantiles'], data['measurement_tb'], data['bands_meas_tb'].tolist(),
+        data['band_tb_quantiles'], data['bands'],output/'brightness_temperature.png', model_responses=responses, note=note, bandpass_colors=colors)
     import corner
     fig=corner.corner(data['samples'],weights=data['weights'],labels=data['names'].tolist(),quantiles=[.16,.5,.84],show_titles=True)
     if note: fig.suptitle(note)

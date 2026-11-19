@@ -64,6 +64,7 @@ def process(source, output, options=None):
     products = dict(wavelength_um=wl, flux_quantiles=flux_q, sed_quantiles=sed_q,
         band_quantiles=band_q, tb_quantiles=tb_q, band_tb_quantiles=band_tb_q,
         bands=bands, star_surface_flux=model.stellar_flux(wl), measurement_tb=measurement_tb,
+        bands_meas_tb=np.asarray([row["band"] for row in rows], dtype=str),
         samples=samples, weights=weights, names=saved['names'], draw_indices=indices, draw_weights=draw_weights)
     for i, band in enumerate(bands):
         products[f'response_wave_{i}'], products[f'response_value_{i}'] = photometry.responses[band]
@@ -106,7 +107,9 @@ def process(source, output, options=None):
         band_depths_ppm={b:dict(zip(('p16','median','p84'),q.tolist())) for b,q in zip(bands,band_q.T)})
     write_json(output/'summary.json',summary)
     write_json(output/'analysis.json',dict(schema_version=1,source=str(Path(source).resolve()),options=options,
-        model_family=config['model']['family'],rows=rows,system=model.system,smoke=config.get('smoke',False)))
+        model_family=config['model']['family'],
+        rows=[{key: value for key, value in row.items() if key != 'enabled'} for row in rows],
+        system=model.system,smoke=config.get('smoke',False)))
     write_json(output/'provenance.json',dict(source=hashes(Path(source)/name for name in ('posterior.npz','provenance.json')),
         retrieval_provenance=provenance,versions=versions(),code=hashes(Path(__file__).parents[1].rglob('*.py'))))
     return output

@@ -39,3 +39,21 @@ figure directory. Sampling never imports plotting. Plotting saved predictions
 never loads TauREx, FastChem, opacity tables, or the original planet inputs.
 
 For atmospheric runs, first configure [external datasets](external-data.md).
+
+## Configure bandpass colors
+
+Plot settings are separate from post-processing settings:
+
+```bash
+python -m taurex_analysis plot ANALYSIS_DIRECTORY \
+  --config planets/HD149026b/plots/default.json
+```
+
+Edit `bandpass_colors` in this JSON file to assign Matplotlib color names or hex
+colors to bands. Both eclipse and brightness-temperature plots use the mapping
+for response curves, shading and response labels. Resolution is exact band ID,
+then measurement group, then parent response, then a fallback palette. NIRCam
+bin IDs inherit their parent filter color unless overridden. Omitted config
+uses automatic colors; the default JSON is not loaded automatically. Replotting
+needs no retrieval or post-processing rerun. This setting does not recolor all
+measurement or model markers.

@@ -24,6 +24,7 @@ def main(argv=None):
     post.add_argument('--config',type=Path)
     plot=commands.add_parser('plot',help='Render saved predictions without model dependencies')
     plot.add_argument('analysis',type=Path);plot.add_argument('--output',type=Path)
+    plot.add_argument('--config',type=Path,help='Plotting settings JSON')
     prepare=commands.add_parser('prepare',help='Prepare responses and the validated stellar grid')
     prepare.add_argument('inputs',type=Path)
     prepare.add_argument('--nircam-literature',help='Complete bin catalog relative to inputs')
@@ -57,5 +58,5 @@ def main(argv=None):
         output=args.inputs
     else:
         from .plotting.runner import plot
-        output=plot(args.analysis,args.output)
+        output=plot(args.analysis,args.output,config=json.loads(args.config.read_text()) if args.config else None)
     print(f'Saved to {output}')
