@@ -1,0 +1,12 @@
+{
+  "datasets": {
+    "exomol-xsec": {
+      "paths": [
+        "~/Data/taurex_data/xsec"
+      ]
+    },
+    "hydrogen-cia": {
+      "path": "~/Data/taurex_data/cia"
+    }
+  }
+}

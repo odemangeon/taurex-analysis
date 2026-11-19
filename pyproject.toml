@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "taurex-analysis"
+version = "0.1.0"
+description = "Configurable thermal eclipse retrievals and independent posterior analysis"
+requires-python = ">=3.10"
+dependencies = ["numpy>=2,<3", "scipy>=1.14"]
+
+[project.optional-dependencies]
+retrieval = ["taurex==3.3.2", "nestle==0.2.1"]
+plotting = ["matplotlib>=3.9", "corner>=2.2"]
+preparation = ["astropy>=6"]
+test = ["pytest>=8"]
+
+[project.scripts]
+taurex-analysis = "taurex_analysis.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "--import-mode=importlib"
+testpaths = ["tests", "HD149026b/tests", "HD149026b/blackbody_fullSpitzer/tests", "HD149026b/guillot_baseopacity_fullSpitzer/tests"]

@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+*.pyc
+
+# Documentation
+site/
+
+# Credentials and local settings
+.env
+.venv/
+venv/
+
+# Generated files — adapt these names to your project
+HD149026b/
+runs/
+analyses/
+
+# Operating-system files
+.DS_Store
+
+# Machine-local external dataset locations
+data-paths.local.json
+*.h5
+*.hdf5
+*.cia

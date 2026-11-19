@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "filters": {
+    "IRAC1": {
+      "id": "Spitzer/IRAC.ch1.080924.subarray",
+      "detector_type": 1,
+      "weighting": "photon"
+    },
+    "IRAC2": {
+      "id": "Spitzer/IRAC.ch2.080924.subarray",
+      "detector_type": 1,
+      "weighting": "photon"
+    },
+    "IRAC3": {
+      "id": "Spitzer/IRAC.ch3.080924.subarray",
+      "detector_type": 1,
+      "weighting": "photon"
+    },
+    "IRAC4": {
+      "id": "Spitzer/IRAC.ch4.080924.subarray",
+      "detector_type": 1,
+      "weighting": "photon"
+    },
+    "IRS16": {
+      "id": "Spitzer/IRS.Blue.PeakUp.2V",
+      "detector_type": 1,
+      "weighting": "photon"
+    },
+    "CHEOPS": {
+      "id": "ESA/CHEOPS.band",
+      "detector_type": 1,
+      "weighting": "photon"
+    },
+    "TESS": {
+      "id": "NASA/TESS.v2.0",
+      "detector_type": 1,
+      "weighting": "photon"
+    },
+    "NIRCAM-F322W2": {
+      "id": "JWST/NIRCam.NRCA5.F322W2.grismA.order1",
+      "detector_type": 1,
+      "weighting": "photon"
+    },
+    "NIRCAM-F444W": {
+      "id": "JWST/NIRCam.NRCA5.F444W.grismA.order1",
+      "detector_type": 1,
+      "weighting": "photon"
+    }
+  },
+  "files": {
+    "CHEOPS.csv": "2c62129f257b571f46f4b680f8e022ff0011bb74946f8e652c61214ab0784af0",
+    "CHEOPS.xml": "95251f11ff7199b5c2c99f4a4802309c10e3505b021d7337e2cd11b3f661aafa",
+    "IRAC1.csv": "acc2003d110d2eb8355adf93c19edb1d9c591f44547f0ad145121495baa52bad",
+    "IRAC1.xml": "8345066da6d45482bf48d36f96868708fa85d6e712f8e82d8082434b64c94f47",
+    "IRAC2.csv": "63e39049cba35a61417462fb22c0160ce9e7ee6d8398355594dfdf0e76ab1bbe",
+    "IRAC2.xml": "c1749f1742264d11288a531f308b31a0755bc1a3e7c19423e2a498e1d8f78a8d",
+    "IRAC3.csv": "3b32b08c1f2530ecea4d441c25c93b9b5b85ab7d34812fa1c9422cf2e8cd117e",
+    "IRAC3.xml": "b5b1527f22d251f8a32d92bbc94270aaf027e4f9aa1b296ff5d89b88b61df2b2",
+    "IRAC4.csv": "77b25b34b1dfa43475def390a7ef235bc24907f2bf285b63a87f920b069245b7",
+    "IRAC4.xml": "6bf9f6f1b4ca5da942119c42a398eec78aeaee5a2a4bd7adb5b1deb4ed9da3e9",
+    "IRS16.csv": "8dc536bc8efe6979da1b1a849fdad8d0bd313f01f9d3af5a265a4636135feb4e",
+    "IRS16.xml": "9893ae3d7d806c618b202cb4def08fda4bc29e6e7ab07b03b1222fdc2cdbf9d7",
+    "NIRCAM-F322W2.csv": "b98c8f755f674e037137cb35fc23f0af2e3d6997d25c67145e7cb978a8a0efb6",
+    "NIRCAM-F444W.csv": "c5a8722102d5897cd254f03941259ad0de53c9138b506e171cfb305f070cd180",
+    "TESS.csv": "47784ccabf5a3ce32177d23b9570530d331350bdb591d577f04a69cd4552252c",
+    "TESS.xml": "d9e6148d5f67dc188c18b8dd0e8c38bbf968b7d6a275811a35f9bad030bf4bc8",
+    "source_files/CHEOPS_bandpass.csv": "21e804f58e88e57bf60e3078f0d57086da30ef4755931f55c7d5e6a8666b2595",
+    "source_files/IRS16_Blue_PeakUp_FilterTransmissionCurve copy.csv": "d4de6823d66f2c6c4a4fbd9efe4ab311fb51ac637d84dd1278e9f60b728f2f84",
+    "source_files/NIRCam_GRISM_TP.csv": "4545f040ba3abdce219fd57979994b86ab48f9c43f70d703184fc17e141c4e48",
+    "source_files/NRCA5_F322W2_May2024_system_throughput.txt": "c7babe793329a54a8a7501b7fd5470b15c975cf39ec39df471991ca60228e623",
+    "source_files/NRCA5_F444W_May2024_system_throughput.txt": "1963c9eca40a7b71dc10262d6a34f552457c13cc85f70c57bb7644670b41fc84",
+    "source_files/Spitzer_080924ch1trans_sub.txt": "f33a9239b335b5aae7f2569c23a355a5e4863b7b772a571f4bad439bd4d2ffeb",
+    "source_files/Spitzer_080924ch2trans_sub.txt": "82d3256a75a357db7889eb68d3976e567a9e9abb83b1dfaa4e82afcd00da4477",
+    "source_files/Spitzer_080924ch3trans_sub.txt": "83371ae62015e7751248c7ceea34212afd4208161e1d37a05059fe9ad74fff4a",
+    "source_files/Spitzer_080924ch4trans_sub.txt": "da60a0d747604bd3b599c0dff79f286f3f414c856a1fac3571bf4605aebbecfc",
+    "source_files/tess-response-function-v2.0.csv": "0751093d8e3384719ead1d1e82bc6423d97c52e602d80fa11176112d0b541928"
+  },
+  "preparation_metadata": {
+    "source_files/Spitzer_080924ch1trans_sub.txt": {
+      "url": "https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/calibrationfiles/spectralresponse/080924ch1trans_sub.txt",
+      "sha256": "f33a9239b335b5aae7f2569c23a355a5e4863b7b772a571f4bad439bd4d2ffeb"
+    },
+    "IRAC1.xml": {
+      "url": "https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/calibrationfiles/spectralresponse/080924ch1trans_sub.txt",
+      "derived_from": "filters/source_files/Spitzer_080924ch1trans_sub.txt",
+      "sha256": "8345066da6d45482bf48d36f96868708fa85d6e712f8e82d8082434b64c94f47"
+    },
+    "source_files/Spitzer_080924ch2trans_sub.txt": {
+      "url": "https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/calibrationfiles/spectralresponse/080924ch2trans_sub.txt",
+      "sha256": "82d3256a75a357db7889eb68d3976e567a9e9abb83b1dfaa4e82afcd00da4477"
+    },
+    "IRAC2.xml": {
+      "url": "https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/calibrationfiles/spectralresponse/080924ch2trans_sub.txt",
+      "derived_from": "filters/source_files/Spitzer_080924ch2trans_sub.txt",
+      "sha256": "c1749f1742264d11288a531f308b31a0755bc1a3e7c19423e2a498e1d8f78a8d"
+    },
+    "source_files/Spitzer_080924ch3trans_sub.txt": {
+      "url": "https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/calibrationfiles/spectralresponse/080924ch3trans_sub.txt",
+      "sha256": "83371ae62015e7751248c7ceea34212afd4208161e1d37a05059fe9ad74fff4a"
+    },
+    "IRAC3.xml": {
+      "url": "https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/calibrationfiles/spectralresponse/080924ch3trans_sub.txt",
+      "derived_from": "filters/source_files/Spitzer_080924ch3trans_sub.txt",
+      "sha256": "b5b1527f22d251f8a32d92bbc94270aaf027e4f9aa1b296ff5d89b88b61df2b2"
+    },
+    "source_files/Spitzer_080924ch4trans_sub.txt": {
+      "url": "https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/calibrationfiles/spectralresponse/080924ch4trans_sub.txt",
+      "sha256": "da60a0d747604bd3b599c0dff79f286f3f414c856a1fac3571bf4605aebbecfc"
+    },
+    "IRAC4.xml": {
+      "url": "https://irsa.ipac.caltech.edu/data/SPITZER/docs/irac/calibrationfiles/spectralresponse/080924ch4trans_sub.txt",
+      "derived_from": "filters/source_files/Spitzer_080924ch4trans_sub.txt",
+      "sha256": "6bf9f6f1b4ca5da942119c42a398eec78aeaee5a2a4bd7adb5b1deb4ed9da3e9"
+    },
+    "source_files/IRS16_Blue_PeakUp_FilterTransmissionCurve copy.csv": {
+      "url": "https://irsa.ipac.caltech.edu/data/SPITZER/docs/files/spitzer/bluePUtrans.txt",
+      "format": "user-supplied CSV",
+      "sha256": "d4de6823d66f2c6c4a4fbd9efe4ab311fb51ac637d84dd1278e9f60b728f2f84"
+    },
+    "IRS16.xml": {
+      "url": "https://irsa.ipac.caltech.edu/data/SPITZER/docs/files/spitzer/bluePUtrans.txt",
+      "derived_from": "filters/source_files/IRS16_Blue_PeakUp_FilterTransmissionCurve copy.csv",
+      "sha256": "9893ae3d7d806c618b202cb4def08fda4bc29e6e7ab07b03b1222fdc2cdbf9d7",
+      "negative_response_policy": "clip_to_zero",
+      "negative_values_clipped": 79,
+      "long_wavelength_cutoff_um": 20.0,
+      "long_wavelength_policy": "zero_at_and_above_cutoff; truncate_with_zero_endpoint"
+    },
+    "source_files/CHEOPS_bandpass.csv": {
+      "url": "https://www.cosmos.esa.int/documents/10651/6260921/CHEOPS_bandpass.csv/",
+      "sha256": "21e804f58e88e57bf60e3078f0d57086da30ef4755931f55c7d5e6a8666b2595"
+    },
+    "CHEOPS.xml": {
+      "url": "https://www.cosmos.esa.int/documents/10651/6260921/CHEOPS_bandpass.csv/",
+      "derived_from": "filters/source_files/CHEOPS_bandpass.csv",
+      "sha256": "95251f11ff7199b5c2c99f4a4802309c10e3505b021d7337e2cd11b3f661aafa"
+    },
+    "source_files/tess-response-function-v2.0.csv": {
+      "url": "https://heasarc.gsfc.nasa.gov/docs/tess/data/tess-response-function-v2.0.csv",
+      "sha256": "0751093d8e3384719ead1d1e82bc6423d97c52e602d80fa11176112d0b541928"
+    },
+    "TESS.xml": {
+      "url": "https://heasarc.gsfc.nasa.gov/docs/tess/data/tess-response-function-v2.0.csv",
+      "derived_from": "filters/source_files/tess-response-function-v2.0.csv",
+      "sha256": "d9e6148d5f67dc188c18b8dd0e8c38bbf968b7d6a275811a35f9bad030bf4bc8"
+    },
+    "source_files/NIRCam_GRISM_TP.csv": {
+      "sha256": "4545f040ba3abdce219fd57979994b86ab48f9c43f70d703184fc17e141c4e48",
+      "column": "TP_modA_1stOrder",
+      "format": "user-supplied CSV"
+    },
+    "source_files/NRCA5_F322W2_May2024_system_throughput.txt": {
+      "sha256": "c7babe793329a54a8a7501b7fd5470b15c975cf39ec39df471991ca60228e623",
+      "format": "user-supplied system throughput; microns"
+    },
+    "NIRCAM-F322W2.csv": {
+      "sha256": "b98c8f755f674e037137cb35fc23f0af2e3d6997d25c67145e7cb978a8a0efb6",
+      "derived_from": [
+        "filters/source_files/NRCA5_F322W2_May2024_system_throughput.txt",
+        "filters/source_files/NIRCam_GRISM_TP.csv"
+      ],
+      "grism_column": "TP_modA_1stOrder",
+      "interpolation": "linear",
+      "extrapolation": "linear using the nearest two grism samples at each end",
+      "grism_measured_range_um": [
+        2.4,
+        5.0
+      ],
+      "output_range_um": [
+        2.35,
+        4.01
+      ],
+      "response": "filter system throughput times grism; no wavelength weighting or normalization"
+    },
+    "source_files/NRCA5_F444W_May2024_system_throughput.txt": {
+      "sha256": "1963c9eca40a7b71dc10262d6a34f552457c13cc85f70c57bb7644670b41fc84",
+      "format": "user-supplied system throughput; microns"
+    },
+    "NIRCAM-F444W.csv": {
+      "sha256": "c5a8722102d5897cd254f03941259ad0de53c9138b506e171cfb305f070cd180",
+      "derived_from": [
+        "filters/source_files/NRCA5_F444W_May2024_system_throughput.txt",
+        "filters/source_files/NIRCam_GRISM_TP.csv"
+      ],
+      "grism_column": "TP_modA_1stOrder",
+      "interpolation": "linear",
+      "extrapolation": "linear using the nearest two grism samples at each end",
+      "grism_measured_range_um": [
+        2.4,
+        5.0
+      ],
+      "output_range_um": [
+        3.89,
+        5.03
+      ],
+      "response": "filter system throughput times grism; no wavelength weighting or normalization"
+    }
+  }
+}

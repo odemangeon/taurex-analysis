@@ -1,0 +1,23 @@
+site_name: TauREx Analysis
+site_description: Thermal eclipse retrievals, model configuration, and posterior analysis
+strict: true
+theme:
+  name: mkdocs
+  color_mode: auto
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - Configuration: configuration.md
+  - Temperature profiles and parameters: parameters.md
+  - Shared filter library: filters.md
+  - External opacity data: external-data.md
+  - Results and provenance: results.md
+  - Comparisons: comparisons.md
+  - Architecture and extensions: architecture.md
+  - Publishing the documentation: publishing.md
+plugins:
+  - search
+validation:
+  links:
+    not_found: warn
+    anchors: warn
