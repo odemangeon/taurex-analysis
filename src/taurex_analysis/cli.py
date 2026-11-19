@@ -19,6 +19,12 @@ def main(argv=None):
     mode=retrieve.add_mutually_exclusive_group()
     mode.add_argument('--check',action='store_true')
     mode.add_argument('--smoke',action='store_true')
+    run=commands.add_parser('run',help='Run retrieval, post-processing and plotting in sequence')
+    run.add_argument('experiment',type=Path)
+    run.add_argument('--output',type=Path,required=True)
+    run.add_argument('--analysis-config',type=Path)
+    run.add_argument('--plot-config',type=Path)
+    run.add_argument('--smoke',action='store_true')
     post=commands.add_parser('postprocess',help='Evaluate an existing posterior; no sampling or plots')
     post.add_argument('results',type=Path);post.add_argument('--output',type=Path,required=True)
     post.add_argument('--config',type=Path)
@@ -34,17 +40,30 @@ def main(argv=None):
     for command in dispatch:
         commands.add_parser(command,help='Run '+command+' analysis')
     args=parser.parse_args(argv)
-    if args.command=='retrieve':
+    if args.command in ('retrieve', 'run'):
         from .config import load
         from .retrieval.runner import retrieve
         config=load(args.experiment)
+        if args.command == 'run':
+            # Validate presentation settings before starting expensive sampling.
+            from .plotting.config import validate
+            analysis_options=json.loads(args.analysis_config.read_text()) if args.analysis_config else {}
+            plot_options=validate(json.loads(args.plot_config.read_text()) if args.plot_config else {})
+            count=analysis_options.get('posterior_draws',0)
+            if not isinstance(count,int) or count < 0:
+                parser.error('posterior_draws must be a nonnegative integer')
         if args.smoke:
             config['smoke']=True
             config['sampler']['settings'].update(nlive=20,tol=2.)
             if config['model']['family']=='atmosphere':
                 config['model']['settings']['atmosphere']['nlayers']=12
                 config['opacity_stride']=300
-        output=retrieve(config,args.output,check=args.check)
+        output=retrieve(config,args.output,check=getattr(args,'check',False))
+        if args.command == 'run':
+            from .postprocess.predictions import process
+            from .plotting.runner import plot
+            analysis=process(output,output/'analysis',analysis_options)
+            plot(analysis,config=plot_options)
     elif args.command=='postprocess':
         from .postprocess.predictions import process
         options=json.loads(args.config.read_text()) if args.config else {}

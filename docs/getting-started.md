@@ -57,3 +57,20 @@ bin IDs inherit their parent filter color unless overridden. Omitted config
 uses automatic colors; the default JSON is not loaded automatically. Replotting
 needs no retrieval or post-processing rerun. This setting does not recolor all
 measurement or model markers.
+
+## Run all stages with one command
+
+```bash
+python -m taurex_analysis run \
+  planets/HD149026b/experiments/blackbody_fullSpitzer.json \
+  --analysis-config planets/HD149026b/analyses/default.json \
+  --plot-config planets/HD149026b/plots/default.json \
+  --output runs/HD149026b/blackbody_fullSpitzer/run01
+```
+
+The output directory must be empty. Retrieval files are written there, derived
+products under `analysis/`, and figures under `analysis/figures/`. The settings
+files are optional and explicitly selected, just as for the separate commands.
+Use `--smoke` only for a software test. Each stage starts after the preceding
+stage succeeds. If analysis or plotting fails, the completed retrieval remains
+saved; use the separate commands to finish without repeating sampling.
